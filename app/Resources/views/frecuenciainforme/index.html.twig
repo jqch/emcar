@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Frecuenciainformes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Frecuenciainforme</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for frecuenciaInforme in frecuenciaInformes %}
+            <tr>
+                <td><a href="{{ path('frecuenciainforme_show', { 'id': frecuenciaInforme.id }) }}">{{ frecuenciaInforme.id }}</a></td>
+                <td>{{ frecuenciaInforme.frecuenciaInforme }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('frecuenciainforme_show', { 'id': frecuenciaInforme.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('frecuenciainforme_edit', { 'id': frecuenciaInforme.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('frecuenciainforme_new') }}">Create a new frecuenciaInforme</a>
+        </li>
+    </ul>
+{% endblock %}

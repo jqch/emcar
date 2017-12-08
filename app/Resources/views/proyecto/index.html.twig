@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Proyectos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Ubicacion</th>
+                <th>Planoubicacion</th>
+                <th>Estado</th>
+                <th>Fechacreacion</th>
+                <th>Presupuestoinicial</th>
+                <th>Fechainicio</th>
+                <th>Fechafin</th>
+                <th>Prorroga1</th>
+                <th>Prorroga2</th>
+                <th>Prorroga3</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proyecto in proyectos %}
+            <tr>
+                <td><a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}">{{ proyecto.id }}</a></td>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{{ proyecto.descripcion }}</td>
+                <td>{{ proyecto.ubicacion }}</td>
+                <td>{{ proyecto.planoUbicacion }}</td>
+                <td>{% if proyecto.estado %}Yes{% else %}No{% endif %}</td>
+                <td>{% if proyecto.fechaCreacion %}{{ proyecto.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ proyecto.presupuestoInicial }}</td>
+                <td>{% if proyecto.fechaInicio %}{{ proyecto.fechaInicio|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if proyecto.fechaFin %}{{ proyecto.fechaFin|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if proyecto.prorroga1 %}{{ proyecto.prorroga1|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if proyecto.prorroga2 %}{{ proyecto.prorroga2|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if proyecto.prorroga3 %}{{ proyecto.prorroga3|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('proyecto_edit', { 'id': proyecto.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('proyecto_new') }}">Create a new proyecto</a>
+        </li>
+    </ul>
+{% endblock %}
