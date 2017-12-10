@@ -37,6 +37,10 @@ class Usuario
      */
     private $empleado;
 
+    public function __toString(){
+        return $this->usuario;
+    }
+
 
     /**
      * Get id

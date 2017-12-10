@@ -22,6 +22,10 @@ class Cargo
      */
     private $abrev;
 
+    public function __toString(){
+        return $this->cargo;
+    }
+
 
     /**
      * Get id

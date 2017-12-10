@@ -17,6 +17,10 @@ class FrecuenciaInforme
      */
     private $frecuenciaInforme;
 
+    public function __toString(){
+        return $this->frecuenciaInforme;
+    }
+
 
     /**
      * Get id
