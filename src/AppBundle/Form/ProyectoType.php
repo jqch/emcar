@@ -13,7 +13,7 @@ class ProyectoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre')->add('descripcion')->add('ubicacion')->add('planoUbicacion')->add('estado')->add('fechaCreacion')->add('presupuestoInicial')->add('fechaInicio')->add('fechaFin')->add('prorroga1')->add('prorroga2')->add('prorroga3')->add('cliente')->add('usuario')->add('frecuenciaInforme');
+        $builder->add('nombre')->add('descripcion')->add('ubicacion')->add('planoUbicacion')->add('estado')->add('presupuestoInicial')->add('fechaInicio')->add('fechaFin')->add('prorroga1')->add('prorroga2')->add('prorroga3')->add('cliente')->add('frecuenciaInforme');
     }/**
      * {@inheritdoc}
      */

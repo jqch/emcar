@@ -45,6 +45,8 @@ class ClienteController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $cliente->setFechaCreacion(new \DateTime('now'));
+            
             $em->persist($cliente);
             $em->flush();
 
