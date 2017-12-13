@@ -45,6 +45,7 @@ class ProyectoController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $proyecto->setFechaCreacion(new \DateTime('now'));
             $em->persist($proyecto);
             $em->flush();
 

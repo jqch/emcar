@@ -45,6 +45,7 @@ class EmpleadoController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $em->setFechaCreacion(new \DateTime('now'));
             $em->persist($empleado);
             $em->flush();
 

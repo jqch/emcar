@@ -87,7 +87,9 @@ class Proyecto
      */
     private $frecuenciaInforme;
 
-
+    public function __toString(){
+        return $this->nombre;
+    }
     /**
      * Get id
      *

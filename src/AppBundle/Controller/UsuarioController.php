@@ -45,6 +45,7 @@ class UsuarioController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $usuario->setFechaCreacion(new \DateTime('now'));
             $em->persist($usuario);
             $em->flush();
 

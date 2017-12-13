@@ -40,11 +40,12 @@
                             <td>{{ proyecto.ubicacion }}</td>
                             <td>{{ proyecto.planoUbicacion }}</td>
                             <td>{% if proyecto.estado %}Si{% else %}No{% endif %}</td>
-                            <td>{% if proyecto.fechaInicio %}{{ proyecto.fechaInicio|date('Y-m-d') }}{% endif %}</td>
-                            <td>{% if proyecto.fechaFin %}{{ proyecto.fechaFin|date('Y-m-d') }}{% endif %}</td>
+                            <td>{% if proyecto.fechaInicio %}{{ proyecto.fechaInicio|date('d-m-Y') }}{% endif %}</td>
+                            <td>{% if proyecto.fechaFin %}{{ proyecto.fechaFin|date('d-m-Y') }}{% endif %}</td>
                             <td>
-                                <a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}"><i class="fa fa-eye"></i></a>
-                                <a href="{{ path('proyecto_edit', { 'id': proyecto.id }) }}"><i class="fa fa-edit"></i></a>
+                                <a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}" data-toggle="tooltip" data-placement="top" data-title="Ver datos"><i class="fa fa-eye"></i></a>
+                                <a href="{{ path('proyecto_edit', { 'id': proyecto.id }) }}" data-toggle="tooltip" data-placement="top" data-title="Editar datos"><i class="fa fa-edit"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="top" data-title="Participantes"><i class="fa fa-users"></i></a>
                             </td>
                         </tr>
                     {% endfor %}
